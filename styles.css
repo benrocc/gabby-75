@@ -873,6 +873,9 @@ main {
 
 @media (max-width: 860px) {
   .app { width: calc(100% - 28px); padding: calc(18px + env(safe-area-inset-top)) 0 40px; }
+  .wordmark { padding: 6px 8px 12px; letter-spacing: 0.08em; }
+  .top { min-height: 0; }
+  .top-actions { align-self: start; }
   .menu { grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0 16px; }
   .menu-btn { min-height: 76px; padding: 16px; }
   .menu-btn strong { font-size: 22px; }
