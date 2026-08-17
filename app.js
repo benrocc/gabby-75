@@ -324,7 +324,6 @@ function todayListHtml(day, live) {
         </button>`).join("")}
     </div>
     <div class="progress"><span style="width:${(n / 7) * 100}%"></span></div>
-    ${live ? "" : `<p class="cal-hint">Hit Start, then check these off.</p>`}
   </aside>`;
 }
 
@@ -357,10 +356,12 @@ function renderToday() {
     <div class="home-intro">
       <p class="note-hi">hey gabby — this is 75 HARD.</p>
       ${quoteCardHtml(q)}
-      ${cta}
     </div>
     <div class="home-split">
-      ${calendarHtml()}
+      <div class="home-col">
+        ${calendarHtml()}
+        ${cta}
+      </div>
       ${todayListHtml(day, live)}
     </div>
   </div>`;
