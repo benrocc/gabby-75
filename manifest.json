@@ -1,6 +1,6 @@
 {
-  "name": "Gabby · 75 HARD",
-  "short_name": "75 HARD",
+  "name": "Gabby's 75 HARD Journey",
+  "short_name": "Gabby's 75 HARD",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F4EBE3",
