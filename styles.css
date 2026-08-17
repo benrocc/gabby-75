@@ -706,15 +706,15 @@ main {
 .home-begin {
   width: 100%;
   border-radius: 28px;
-  padding: 20px 18px;
-  font-size: 16px;
-  letter-spacing: 0.14em;
+  padding: 22px 18px;
+  font-size: 17px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
-  background: linear-gradient(180deg, #f6e2d6, #e8c5b4);
-  color: var(--ink);
-  border: 1px solid rgba(201, 160, 122, 0.55);
-  box-shadow: 0 12px 28px rgba(180, 120, 110, 0.18);
+  background: #f0c6c0;
+  color: #4a2c28;
+  border: 0;
+  box-shadow: 0 10px 24px rgba(196, 120, 120, 0.28);
 }
 .home-status {
   width: 100%;
