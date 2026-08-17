@@ -401,34 +401,33 @@ function renderPath() {
   const a = currentAttempt();
   const today = todayYmd();
   const history = attemptHistoryHtml(a?.id);
+  const start = a ? a.startedOn : today;
   const legend = `<div class="legend">
       <span><i class="l-done"></i>done</span>
       <span><i class="l-today"></i>today</span>
       <span><i class="l-wait"></i>ahead</span>
       <span><i class="l-miss"></i>miss</span>
     </div>`;
-  if (!a) {
-    main.innerHTML = `<div class="section-h"><h2>Path</h2><span>not started</span></div>
-      <p class="flourish">75 HARD</p>
-      <p class="empty">Start 75 HARD on Today. The grid lives here.</p>
-      ${history ? `<div class="attempts">${history}</div>` : ""}`;
-    return;
-  }
   let cells = "";
   for (let i = 0; i < 75; i++) {
-    const ymd = addDays(a.startedOn, i);
-    const cls = [];
-    if (ymd === today) cls.push("today");
-    if (ymd > today) cls.push("future");
-    else if (isComplete(a.days[ymd])) cls.push("done");
-    else if (ymd < today) cls.push("fail");
-    cells += `<div class="cell ${cls.join(" ")}" title="${ymd}">${i + 1}</div>`;
+    const ymd = addDays(start, i);
+    const cls = ["cell"];
+    if (!a) cls.push("future");
+    else {
+      if (ymd === today) cls.push("today");
+      if (ymd > today) cls.push("future");
+      else if (isComplete(a.days[ymd])) cls.push("done");
+      else if (ymd < today) cls.push("fail");
+    }
+    cells += `<div class="${cls.join(" ")}" title="${ymd}">${i + 1}</div>`;
   }
 
   main.innerHTML = `
-    <div class="section-h"><h2>Path</h2><span>from ${a.startedOn}</span></div>
+    <div class="section-h"><h2>Path</h2><span>${a ? "from " + a.startedOn : "start on Today"}</span></div>
     ${legend}
-    <div class="grid-75">${cells}</div>
+    <div class="path-board">
+      <div class="grid-75">${cells}</div>
+    </div>
     ${history ? `<div class="attempts">${history}</div>` : ""}`;
 }
 
