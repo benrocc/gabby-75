@@ -703,13 +703,10 @@ main {
   align-items: stretch;
   width: 100%;
 }
-.home-col {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 100%;
+.home-cta {
+  width: min(480px, 100%);
+  margin: 0 auto;
 }
-.home-col .cal { flex: 1; }
 .rules-panel {
   background: rgba(255,252,249,0.88);
   border-radius: 28px;

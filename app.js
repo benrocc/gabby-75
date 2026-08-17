@@ -357,11 +357,9 @@ function renderToday() {
       <p class="note-hi">hey gabby — this is 75 HARD.</p>
       ${quoteCardHtml(q)}
     </div>
+    <div class="home-cta">${cta}</div>
     <div class="home-split">
-      <div class="home-col">
-        ${calendarHtml()}
-        ${cta}
-      </div>
+      ${calendarHtml()}
       ${todayListHtml(day, live)}
     </div>
   </div>`;
